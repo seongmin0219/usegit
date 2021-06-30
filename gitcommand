@@ -1,0 +1,52 @@
+## git ignore 파일 작성 파이썬 캐시 파일 등 깃에 올릴 필요가 없는 파일의 패턴을 저장한다
+
+vi .gitignore
+
+# venv 폴더와 그 하위 내용을 제외 
+/venv/
+
+# __pycache 를 포함한 모든 파일 제외
+__pycache*
+
+*.py
+
+위와 같은 형태로 제외 할 파일 지정
+
+
+git add 
+깃이 추적할 수 있게끔 한다. add를 한 이후부터는 git tracked 영역에 놓인다.
+
+git commit 
+로컬 저장소에 수정한 내역을 저장한다
+
+git push
+
+commit된 파일들을 git 원격 저장소에 업로드한다.
+
+
+git remote
+현재 프로젝트의 등록된 원격 저장소 목록을 확인할 수 있다
+
+git remote -u add <remote 저장소 이름> <branch 이름>
+ex) git remote -u add origin master 
+해당 git 로컬 저장소에서 git 원격 저장소를 추가한다. 
+
+
+
+git clone
+
+git clone 하면 remote 저장소 origin이 자동으로 등록된다
+
+
+git fetch와 clone의 차이(x) - 머리 속에 떠도는 기억 
+git fetch와 pull의 차이(O) 
+
+git fetch는 원격 저장소의 최신 커밋 이력을 로컬 저장소로 가지고 오게 되고 
+
+무조건 병합하지 않는다. 내용 확인 용도로 쓰이고 이름 없는 브랜치로 가져오고 FETCH_HEAD'의 이름으로 체크 아웃 할 수도 있다
+
+git pull은 최신 원격 저장소의 커밋을 병합
+
+fetch등의 동작을 수행하는 순간 이력 그래프가 분기가 갈려 그려지면서 깃 이력 그래프가 만들어진다
+  
+
